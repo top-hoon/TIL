@@ -36,6 +36,21 @@
     - controller @Resource(name=서비스 이름) 해서 객체 생성
       - @RequestMapping(value='보여주고싶은 view단 경로') 하고 시작
     - jsp 파일 -> html 만들고 연결하는 ajax 라든지.. 사용해서 view단 꾸미면 끝!
+	
+````java
+	//filter
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+		<url-pattern>*.c</url-pattern>
+		<url-pattern>*.p</url-pattern>
+		<url-pattern>*.json</url-pattern>
+		<url-pattern>*.jsp</url-pattern>
+		<url-pattern>*.jiro</url-pattern>
+		<url-pattern>*.cm</url-pattern>
+		<url-pattern>*.desk</url-pattern>
+	</filter-mapping>
+````
 ## HashMap
 ````java
   HashMap<String,String> map1 = new HashMap<String,String>();//HashMap생성

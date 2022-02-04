@@ -24,7 +24,7 @@ colHeadAlign: "center", // 헤드의 기본 정렬 값.colHeadAlign 을 지정�
 
                     colGroup: [ // key 값이 데이터베이스의 컬럼값이고, label은 내가 지정하는 ui에 나오는 이름
                     	{key:"ROWNUM",   label:"No.", width:40,    align:"right"},
-                   		{key:"SAPP_DATE",   label:"결제일", width:80,    align:"center", formatter:"custom-date"},
+                   	{key:"SAPP_DATE",   label:"결제일", width:80,    align:"center", formatter:"custom-date"},
                       ],
                       colHead :{
                         onclick:funcion(){

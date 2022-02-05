@@ -9,7 +9,7 @@ https://offbyone.tistory.com/55#rp
 
 
 우리 회사!
-화면진입로그 등록 : 로그종류, 회원번호, 로그성세
+화면진입로그 등록 : 로그종류, 회원번호, 로그상세
 saveWorkingLog("FL", "", "");
 
 ````js

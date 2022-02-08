@@ -35,9 +35,15 @@
   - 현재시간에 1달 빼기
     - SELECT DATE_ADD(NOW(), INTERVAL -1 MONTH)
 
-
-
-
-
-
-
+## CASE WHEN THEN 
+  - CASE WHEN 조건1 THEN 조건만족시 값1
+         WHEN 조건2 THEN 조건만족시 값2
+         WHEN 조건3 THEN 조건만족시 값3
+         ELSE 0
+    END 결과 컬럼명
+    
+  - 조건과 조건만족시 결과값의 쌍이 반복되며 모든 조건이 불일치 할 때는 ELSE 조건에 지정된 값을 결과로 얻는다. END 다음에는 지정하는 결과 컬럼명이 쿼리 결과 출력시 표시되는 컬럼명.
+  - SELECT 판매량, 국적, 판매제품, CASE WHEN 국적 = '한국' THEN '고품질' ELSE 'x' END 고품질여부 FROM PANDA;
+    - ex) SUM(CASE WHEN 국적 = '한국'THEN 판매량 ELSE 0 END) 한국_판매량
+      ->  국적이 한국이면 판매량을 뽑고 아니면 0을 반환하는데 한국_판매량으로 출력
+    

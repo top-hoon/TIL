@@ -46,4 +46,5 @@
   - SELECT 판매량, 국적, 판매제품, CASE WHEN 국적 = '한국' THEN '고품질' ELSE 'x' END 고품질여부 FROM PANDA;
     - ex) SUM(CASE WHEN 국적 = '한국'THEN 판매량 ELSE 0 END) 한국_판매량
       ->  국적이 한국이면 판매량을 뽑고 아니면 0을 반환하는데 한국_판매량으로 출력
+      https://javafactory.tistory.com/533 
     

@@ -48,3 +48,18 @@
       ->  국적이 한국이면 판매량을 뽑고 아니면 0을 반환하는데 한국_판매량으로 출력
       https://javafactory.tistory.com/533 
     
+## UNION, UNIONALL
+  - UNION-> distinct 쿼리의 결과를 합치고 중복되는 ROW는 제거한 결과값
+  - UNIONALL 컬럼값이 같은 ROW도 결과로 보여줌 중복제거를 하지않아서 UNION보다 빠르다
+  - 내부적으로 UNION 과 UNION ALL을 처리하는 과정
+    - 최종UNION(dist/all) 결과에 적합한 임시 테일블의 모든 컬럼을 Unique Hash 인덱스생성
+    - 서브쿼리 1 실행 후 결과를 임시 테이블에 복사
+    - 서브쿼리 2 실행 후 결과를 입시 테일블에 복사
+    - 3, 4 번 과정에서 임시테이블이 특정 사이즈 이상으로 커지면 임시테이블을 디스크 임시 테이블로 변경
+    - 임시테이블을 읽어서 클라이언트에게 전송하고 임시테이블 삭제
+    - UNION , UNION ALL 그리 좋은 SQL 작성은 아님. 모델링 차원에서 테이블을 통합하는게 좋음.
+      UNION 보다는 UNION ALL 을 사용하자. UNION 을 사용해야 한다면, 최소 필요 컬럼만 SELECT 하자
+      
+      // 참고 http 
+
+

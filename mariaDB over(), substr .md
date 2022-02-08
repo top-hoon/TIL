@@ -24,6 +24,10 @@
   - SELECT MENU_ID, MENU_NAME, COUNT(*)OVER() AS TOTALCOUNT FROM mem_salse
   - 쉽게 전체 카운트를 할수 있다.
 
+## substr()
+  - SUBSTR(A.SALE_DATE,1,6) A.SALE_DATE 를 1번째부터 6개의 문자열을 추출
+    - ex) 20220208 -> 202202
+
 
 
 

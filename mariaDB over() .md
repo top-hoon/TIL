@@ -20,6 +20,10 @@
 
   - RATIO_TO_REPORT(컬럼)OVER() : 현재행값/SUM(전체행값) 퍼센테이지로 나타낼경우 100곱하면 됩니다.
     RATIO_TO_REPORT(컬럼)OVER(PARTITION BY 컬럼) : 현재행값 / SUM(그룹행값) 퍼센테이지로 나타낼경우 100곱하면 됩니다.
+    
+  - SELECT MENU_ID, MENU_NAME, COUNT(*)OVER() AS TOTALCOUNT FROM mem_salse
+  - 쉽게 전체 카운트를 할수 있다.
+
 
 
 

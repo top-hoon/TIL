@@ -29,5 +29,15 @@
     - ex) 20220208 -> 202202
 
 
+## interval (DATE_ADD)
+  - 현재시간에 1초 더하기
+    - SELECT DATE_ADD(NOW(), INTERVAL 1 SECOND)
+  - 현재시간에 1달 빼기
+    - SELECT DATE_ADD(NOW(), INTERVAL -1 MONTH)
+
+
+
+
+
 
 

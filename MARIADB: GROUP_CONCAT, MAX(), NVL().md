@@ -30,10 +30,24 @@
   - select MAX(CARD_NO) AS CARD_NOS, MEM_NO from mem_card where USE_YN = 'Y' group by MEM_NO
   - group by 를 mem_no로 잡고 회원 넘버가 가지고 있는 카드번호가 제일 큰값을 뽑아서 정렬할 수 있다.
 
+## LPAD, RPAD 왼쪽 오른쪽에 특정문자를 원하는 자리수만큼 넣기
+  - 왼쪽에 특정 문자를 원하는 자리수만큼 채워서 반환
+  - 사용법 : LAPD(원본 문자열, 원하는 자리수, 채울문자열) SELECT LPAD('ABC',10,'0')  FROM DUAL;  결과 : 0000000ABC
+  
+  - 오른쪽에 특정 문자를 원하는 자리수만큼 채워서 반환
+  - 사용법 : RPAD(원본문자열, 원하는 자리수, 채울 문자열) SELECT RPAD('ABC',10,'0') FROM DUAL; 결과 : ABC0000000
 
+## NVL()
+  - nvl 함수는 값이 Null인경우 지정값을 출력하고, null이 아니면 원래 값을 그대로 출력한다. 
 
+## NVL2()
+  - NVL2 함수는 Null이 아닌 경우 지정값1을 출력하고, Null인 경우 지정값2를 출력한다.
 
-
+## Cast()
+  - Cast 함수를 사용하면 지정한 값을 다른 데이터 타입으로 변환가능
+  - cast(expr as type) 
+  - 지정할 수 있는 데이터 타입
+  - BINARY[(N)], CHAR[(N)] [charset_info], DATE, DATETIME, DECIMAL[(M[,D])], JSON, NCHAR[(N)], SIGNED [INTEGER], TIME, UNSIGNED [INTEGER]
 
 
 

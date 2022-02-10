@@ -47,4 +47,19 @@ if(!companyName.equals("") {
 }
 ````
 - 이런식으로 하면 조금 편리하고 보기 좋게 만들수 있다!
+### 뭐좀 검색해보다가 우연히 본 where 1=1 의 위험성
+ - 만약 select문이 아닌, update문이나 delete문에 사용한다면
+````java
+<update id="test">
+	update test_tbl
+	set use_yn = 'N'
+	where 1=1
+	<if test="first != null">
+		and first = #{first}
+	</if>
+</update>
+````
+ - first 값이 null이라면 WHERE 1=1 구문이 되면서 test_tbl 테이블의 모든 use_yn 컬럼 값은 'N'이 될 것이다. 따라서 중요한 것은 WHERE 1=1을 쓰지 말라는 것보다도 '예외 처리'를 확실히 하는 것이 좋겠다 라고 했다 글쓴이도 그냥 그래도 뭐좀 알고 쓰라고 한것같다. 
+https://jdm.kr/blog/7
+
 

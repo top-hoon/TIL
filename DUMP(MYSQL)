@@ -1,3 +1,4 @@
+
 ## DUMP
   mysqldump -u root -p --all-databases > alldatabases_2017-01-31.sql
 
@@ -481,3 +482,5 @@ AUTO : Add a SET statement to the output if GTIDs are enabled on the server.
 --allow-keywords
 
 : 컬럼 이름으로 keyword를 사용하는 것을 허용 합니다.
+
+https://code-factory.tistory.com/21

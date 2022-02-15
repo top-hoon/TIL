@@ -5,7 +5,7 @@
 
 ## @Resource
   - ex) 	
-````java
+````java 
     @Resource(name = "egovMessageSource")
     EgovMessageSource egovMessageSource;
 ````

@@ -26,6 +26,16 @@
     3. 중복제거 : group_concat(distinct 필드명)
     4. 문자열 정렬 : group_concat(필드명 order by 필드명)
 
+EX)
+````SQL 
+select COMCD as 센터코드, group_concat(ITEM_NM) as '프로그램명' from program_item
+ where COMCD = 'JUNGNANG01'
+   and PART_CD = '02'
+   and PROGRAM_KIND = '01'
+   and SPORTS_CD = '07'
+   and ITEM_NM like '%성장기%';
+````
+
 ## group by로 뽑아온 값중에 가장 큰 값 가져오기 -max() 
   - select MAX(CARD_NO) AS CARD_NOS, MEM_NO from mem_card where USE_YN = 'Y' group by MEM_NO
   - group by 를 mem_no로 잡고 회원 넘버가 가지고 있는 카드번호가 제일 큰값을 뽑아서 정렬할 수 있다.

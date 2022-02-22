@@ -53,4 +53,4 @@ SELECT CAST(칼럼 AS INT) FROM  MY_TABLE
 SELECT CAST(PRICEAS AS VARCHAR)AS 가격 FROM  MY_TABLE
 ````
 
-
+- https://coding-factory.tistory.com/100

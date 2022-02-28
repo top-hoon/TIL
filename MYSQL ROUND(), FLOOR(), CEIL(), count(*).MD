@@ -22,3 +22,7 @@ SELECT CEILING(135.375); -- 136
 ````SQL
 SELECT TRUNCATE(135.375, 2); --135.37
 ````
+
+### count(*), count(1)
+ - NULL값과 상관없이 모든 행 수를 카운트 한다.
+ - count(컬럼) 은 해당 컬럼의 값의 NULL인 행은 COUNT에 포함되지 않는다.

@@ -14,5 +14,7 @@ title like '%' ||  #{keyword} || '%'
 title like '%' + #{keyword} + '%'
 
 
+TC.TRAIN_DAY like CONCAT('%',dayofweek(C.CAL_DATE),'%');
+
 
 출처: https://fruitdev.tistory.com/60 [과일가게 개발자]

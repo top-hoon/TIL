@@ -7,3 +7,14 @@ SELECT DATE_FORMAT(NOW(),'%Y-%m-%d') AS DATE FROM DUAL
   -  결과 
   -  2016-09-22
 
+## abs()
+ - x 의 절대값을 구하는 함수
+````sql
+
+ select abs(1000);
+             -> 1000
+ select abs(-1000);
+             -> 1000
+  select abs(-1156);
+             -> 1156
+````

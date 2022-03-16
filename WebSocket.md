@@ -18,6 +18,6 @@
     
  
  
- spring boot web socket 이용해서 한번 해보는것도 좋을듯 WebSocketMessageBrokerConfigurer
-webSocket, socket.io 설명
-https://d2.naver.com/helloworld/1336
+  - spring boot web socket 이용해서 한번 해보는것도 좋을듯 WebSocketMessageBrokerConfigurer
+  - webSocket, socket.io 설명
+  - https://d2.naver.com/helloworld/1336

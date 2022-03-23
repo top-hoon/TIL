@@ -147,7 +147,7 @@ CASE NUM
         SET 'result_Str' = 'orange_cookie';
 END CASE;
 ````
-##### 회사 프로시져예제
+##### 프로시져예제
 ````SQL
 CREATE DEFINER=`jnimc`@`%` FUNCTION `jnimc`.`Fn_GetHoliday`(P_COMCD varchar(20), P_DATE varchar(8), P_CLASS_CD varchar(10) CHARSET utf8) RETURNS varchar(8) CHARSET utf8
 BEGIN  

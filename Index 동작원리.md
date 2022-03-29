@@ -27,6 +27,26 @@
  - 인덱스를 잘못 사용할 경우 오히려 성능이 저하되는 역효과 발생
 > **만약 CRU 가 빈번한 속성에 인덱스를 걸면 인덱스의 크기가 비대해져서 성능이 오히려 저하되는 효과가 발생할 수 있음**
 
+
+## Clustered Index VS Non Clustered Index
+ - Clustered Index는 개발자가 설정하는 Index가 아닌 MySQL이 자동으로 설정하는 Index이다.
+ - 테이블에 Auto increment 값으로 pk가 있다면 해당컬럼이 Clustered Index가 된다.
+ - 만약 해당 PK가 없다면 컬럼중에 Unique컬럼을 Clustered Index로 선정한다.
+ - unique컬럼도 하나도 없다면? MySQL에서 내부적으로 Hidden Clustered Index Key (row ID)를 만들어 Clustered Index로 사용한다.
+ - MySQL에서 자동으로 설정되는 Clustered Index는 최대 효율을 위해 중복이 최대한 발생하지 않는 컬럼을 사용하게 된다.
+ - Non Clustered Index 는 개발자가 설정
+ - 멀티컬럼 index 의 경우에는 최대 16개의 컬럼을 사용할 수 있고, 테이블당 인덱스의 개수는 최대 64개까지 가능! (+Clustered Index)= 65개까지 가능
+
+## 속도 비교
+![index_speed](https://user-images.githubusercontent.com/79463595/160515123-8c6add03-3fc6-413d-b884-0d744b56bbc3.png)
+ - 보는것과 같이 데이터양이 많아지면 많아질수록 fullscan보다 index scan이 더 빠르다
+ - 하지만 특정 데이터양 전까지는 fullscan 이 더 빠른것을 확인할 수 있다.
+  ### why?
+    - Index를 통한 검색은 B+Tree에서 leaf node까지 찾아 내려간 후 해당 데이터를 찾기위해 disk로 접근한다.
+    - Full scan은 이렇게 B+Tree를 찾아가는 과정이 없다. 디스크로 가서 바로 모든 데이터를 읽어온다.
+    - 데이터 양이 많지 않거나, Index가 효율적으로 설정되어있지 않은 경우 오히려 Table Full scan이 더 빠르다.
+    - 그리고 Index Full Scan이 실행되는 경우 Index Full Scan의 데이터가 테이블의 모든 데이터의 양과 비슷한 경우에도 역시 Table Full Scan이 더 빠를 수 있다.
+
 ## index의 자료구조
  - 인덱스를 구현하기 위해서는 다양한 자료구조를 사용할 수 있는데, 가장 대표적인게 해시테이블, b+tree이다.
 
@@ -70,7 +90,8 @@
  - 리프노드에 갔을 때 디스크에 존재하는 데이터의 주소값을 구할 수 있고 Linked List를 통해 탐색도 가능하다
 
 
- 
+
+
 
 
 
@@ -83,10 +104,11 @@
 
 
 #### 참고
- - https://zorba91.tistory.com/293
  - https://blog.jcole.us/2013/01/10/btree-index-structures-in-innodb/
  - http://www.btechsmartclass.com/data_structures/b-trees.html
  - https://blog.jcole.us/2013/01/10/btree-index-structures-in-innodb/
+ - https://kyungyeon.dev/posts/66 - 데이터 삽입에대한 설명도 있음
+ - https://zorba91.tistory.com/293
 
 
 

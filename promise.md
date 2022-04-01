@@ -38,3 +38,9 @@ new Promise(function(resolve,reject){
  - 실패상태가 되면 실패한 이유(실패 처리의 결과 값)을 catch로 받을 수 
 
 
+
+
+
+
+
+ - https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
